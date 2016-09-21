@@ -11,19 +11,21 @@
 # @references http://www.htmlwidgets.org (Ramnath Vaidyanathan, Kenton Russell, and RStudio).
 # @references https://christophergandrud.github.io/networkD3/ (Christopher Gandrud, JJ Allaire, & Kent Russell)
 # @seealso \code{\link[simPATHy]{plotGraphNELD3}},  \code{\link[simPATHy]{easyLookShiny}}, \code{\link[simPATHy]{fitSgraph}}
-graphNELD3 <- function(graph,S=NULL,colNode = "#c0c0c0",limColEdges=NULL,edgeClick=FALSE, width = NULL, height = NULL) {
+graphNELD3 <- function(graph,S=NULL,colNode = "#c0c0c0",limColEdges=NULL,edgeClick=FALSE, width = NULL, height = NULL,acyclic=TRUE) {
 
   legend<-FALSE
   dataLegend<-data.frame()
 
-  type<-NULL
-  if (!(class(graph) == "graphNEL"))
-    stop("graph argument is not a graphNEL object")
-  else {
-    if (gRbase::is.DG.graphNEL(graph)) type <- "dag"
-    if (gRbase::is.UG.graphNEL(graph)) type <- "ug"
-    if (is.null(type)) stop("graph argument is not a valid object")
-  }
+  if(acyclic){
+    type<-NULL
+    if (!(class(graph) == "graphNEL"))
+      stop("graph argument is not a graphNEL object")
+    else {
+      if (gRbase::is.DG.graphNEL(graph)) type <- "dag"
+      if (gRbase::is.UG.graphNEL(graph)) type <- "ug"
+      if (is.null(type)) stop("graph argument is not a valid object")
+    }
+  } else { type<- "dag" }
 
   nodes<-data.frame(name=graph::nodes(graph),stringsAsFactors = FALSE)
   Elist<-gRbase::edgeList(graph)

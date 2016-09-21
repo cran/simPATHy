@@ -41,14 +41,20 @@ plotCorGraph(S1 = S,type ="cor",colLim = c(-lim,lim))
 plotCorGraph(S1 = S,type = "cor", graph = graph)
 
 ## ------------------------------------------------------------------------
-path <- list(c("613","1398"),c("25","1398"),c("1398","5295"),
- c("5295","207"),c("207","4193"),c("4193","7157"))
-
-## ------------------------------------------------------------------------
-path <- generatePath(graph,from="613",to="7157")
+path<-list(c("613","867"),c("867","5295"),c("5295","207"),
+             c("207","4193"),c("4193","7157"))
 
 ## ---- eval=FALSE---------------------------------------------------------
 #  path <- getPathShiny(graph)
+
+## ------------------------------------------------------------------------
+path
+
+## ---- eval=FALSE---------------------------------------------------------
+#  path <- generatePath(graph,from="613",to="7157")
+
+## ---- eval=FALSE---------------------------------------------------------
+#  path1 <- list(c("613","2885"), c("4193","7157"))
 
 ## ------------------------------------------------------------------------
 min<-c(2,8,2,0.1,0.5)
@@ -93,4 +99,20 @@ graph = graph, path = Result$path,colLim = c(-0.4,0.4))
 
 ## ---- eval=FALSE---------------------------------------------------------
 #  easyLookShiny(Result, graph)
+
+## ------------------------------------------------------------------------
+library(topologyGSA)
+#?pathway.var.test
+y1<-Result$dataset[rownames(Result$dataset)=="cl1",]
+y2<-Result$dataset[rownames(Result$dataset)=="cl2",]
+alpha<-0.05
+pathway.var.test(y1, y2, dag = graph, alpha)
+
+## ------------------------------------------------------------------------
+library(clipper)
+#?clipper
+expr<-t(Result$dataset)
+classes<-as.numeric(gsub("cl","",colnames(expr)))
+clipped<-clipper(expr,classes,graph)
+clipped
 
