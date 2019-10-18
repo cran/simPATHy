@@ -21,8 +21,8 @@ graphNELD3 <- function(graph,S=NULL,colNode = "#c0c0c0",limColEdges=NULL,edgeCli
     if (!(class(graph) == "graphNEL"))
       stop("graph argument is not a graphNEL object")
     else {
-      if (gRbase::is.DG.graphNEL(graph)) type <- "dag"
-      if (gRbase::is.UG.graphNEL(graph)) type <- "ug"
+      if (gRbase::is.DG(graph)) type <- "dag"
+      if (gRbase::is.UG(graph)) type <- "ug"
       if (is.null(type)) stop("graph argument is not a valid object")
     }
   } else { type<- "dag" }

@@ -26,4 +26,3 @@ Choose a path in a graph from an interactive shiny app with the rigth format for
 \seealso{
 \code{\link[simPATHy]{simPATHy}}
 }
-

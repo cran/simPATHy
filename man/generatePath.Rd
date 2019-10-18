@@ -20,4 +20,3 @@ Find one shortest path in the graph between two given nodes.
 \seealso{
 \code{\link[igraph]{get.all.shortest.paths}}
 }
-

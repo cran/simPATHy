@@ -4,8 +4,8 @@
 \alias{simPATHy}
 \title{Simulate data from a graphical model}
 \usage{
-simPATHy(graph, path = NULL, S = NULL, min = 2, max = 3, prob = 1,
-  n1 = 500, n2 = n1, digits = 5, mu1 = 0, mu2 = mu1,
+simPATHy(graph, path = NULL, S = NULL, min = 2, max = 3,
+  prob = 1, n1 = 500, n2 = n1, digits = 5, mu1 = 0, mu2 = mu1,
   muRandom = FALSE)
 }
 \arguments{
@@ -113,4 +113,3 @@ if(require(gRbase) & require(graph)){
 \seealso{
 \code{\link[simPATHy]{easyLookDys}}, \code{\link[simPATHy]{easyLookShiny}}, \code{\link[simPATHy]{plotCorGraph}},  \code{\link[simPATHy]{plotGraphNELD3}}
 }
-

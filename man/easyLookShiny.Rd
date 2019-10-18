@@ -22,4 +22,3 @@ A Shiny application for visual summary of dysregulation.
 \seealso{
 \code{\link[simPATHy]{simPATHy}}, \code{\link[simPATHy]{plotGraphNELD3}}, \code{\link[simPATHy]{plotCorGraph}}, \code{\link[simPATHy]{easyLookDys}}
 }
-

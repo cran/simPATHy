@@ -20,4 +20,3 @@ Adjust the diagonal of a symmetric square matrix, by the smallest eigenvalue met
 \details{
 Finds the smallest eigenvalue lambda of \code{M1} (or \code{M1} and \code{M2} if supplied) and adds (threshold-lambda) to the diagonal to make it positive definite.
 }
-

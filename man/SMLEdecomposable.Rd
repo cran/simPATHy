@@ -20,4 +20,3 @@ Compute a maximum likelihood estimate of a covariance matrix in a decomposable G
 \references{
 Lauritzen, S. L. (1996). Graphical Models. Clarendon Press, Oxford.
 }
-

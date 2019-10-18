@@ -21,4 +21,3 @@ experimental condition (presence of BCR/ABL gene arrangment, class 2).
 data(chimera)
 }
 \keyword{datasets}
-

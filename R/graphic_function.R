@@ -110,8 +110,8 @@ plotCorGraph<-function(S1,type="cor",S2=NULL,graph=NULL,path=NULL,main="",colLim
     Gtype<-NULL
     if(!(class(graph)=="graphNEL")) stop("graph argument is not a graphNEL object")
     else {
-      if(gRbase::is.DG.graphNEL(graph)) Gtype<-"dag"
-      if(gRbase::is.UG.graphNEL(graph)) Gtype<-"ug"
+      if(gRbase::is.DG(graph)) Gtype<-"dag"
+      if(gRbase::is.UG(graph)) Gtype<-"ug"
     }
     if(is.null(Gtype)) stop("graph argument is not a valid object")
   }
@@ -411,8 +411,8 @@ plotGraphNELD3<-function(graph,type="cor",S1=NULL,S2=NULL,colLim=c(-1,1),legendC
   if (!(class(graph) == "graphNEL"))
     stop("graph argument is not a graphNEL object")
   else {
-    if (gRbase::is.DG.graphNEL(graph)) Gtype <- "dag"
-    if (gRbase::is.UG.graphNEL(graph)) Gtype <- "ug"
+    if (gRbase::is.DG(graph)) Gtype <- "dag"
+    if (gRbase::is.UG(graph)) Gtype <- "ug"
     if (is.null(Gtype)) stop("graph argument is not a valid object")
   }
 

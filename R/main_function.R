@@ -26,8 +26,8 @@ generatePath<-function(graph,from=NULL,to=NULL){
   # check graph
   if(!(class(graph)=="graphNEL")) stop("argument graph is not a graphNEL object")
   else {
-    if(gRbase::is.DG.graphNEL(graph)) type<-"dag"
-    if(gRbase::is.UG.graphNEL(graph)) type<-"ug"
+    if(gRbase::is.DG(graph)) type<-"dag"
+    if(gRbase::is.UG(graph)) type<-"ug"
 
     if(is.null(type)) stop("argument graph is not an admitted object")
   }
@@ -79,9 +79,9 @@ fitSgraph<-function(graph,S){
 
   if(!(class(graph)=="graphNEL")) stop("graph argument is not a graphNEL object")
   else {
-    if(gRbase::is.DG.graphNEL(graph)) type<-"dag"
-    if(gRbase::is.UG.graphNEL(graph)) type<-"ug"
-    if(gRbase::is.TUG.graphNEL(graph)) type<-"tug"
+    if(gRbase::is.DG(graph)) type<-"dag"
+    if(gRbase::is.UG(graph)) type<-"ug"
+    if(gRbase::is.TUG(graph)) type<-"tug"
 
 
     if(is.null(type)) stop("argument graph is not an admitted object")
@@ -159,7 +159,7 @@ makePositiveDefinite<-function(M1,M2=NULL,threshold=0.1){
 SMLEdecomposable<-function(S,graph){
 
   if( !(class(graph)=="graphNEL") ) stop("graph argument is not a graphNEL object")
-  if( !gRbase::is.TUG.graphNEL(graph) ) stop("graph argument must be decomposable")
+  if( !gRbase::is.TUG(graph) ) stop("graph argument must be decomposable")
 
   nodes<-graph::nodes(graph)
 
@@ -298,8 +298,8 @@ simPATHy<-function(graph,path=NULL,S=NULL,min=2,max=3,prob=1,n1=500,n2=n1,digits
   # check2 -> graph
   if(!(class(graph)=="graphNEL")) stop("graph argument is not a graphNEL object")
   else {
-    if(gRbase::is.DG.graphNEL(graph)) type<-"dag"
-    if(gRbase::is.UG.graphNEL(graph)) type<-"ug"
+    if(gRbase::is.DG(graph)) type<-"dag"
+    if(gRbase::is.UG(graph)) type<-"ug"
     if(is.null(type)) stop("graph argument is not a valid object")
   }
 

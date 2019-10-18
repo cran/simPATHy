@@ -19,4 +19,3 @@ Nicely formatted output of simPATHy dysregulation.
 \description{
 Summary of the result for a quick look of simPATHy function.
 }
-

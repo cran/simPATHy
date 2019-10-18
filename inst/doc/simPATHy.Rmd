@@ -3,7 +3,7 @@ title: "Vignette simPATHy"
 author: "Elisa Salviato, Vera Djordjilovic, Monica Chiogna, Chiara Romualdi"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_document
-bibliography: biblio.bib
+bibliography: biblio2.bib
 vignette: >
   %\VignetteIndexEntry{simPATHy}
   %\VignetteEngine{knitr::rmarkdown}

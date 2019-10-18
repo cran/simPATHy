@@ -28,4 +28,3 @@ Whittaker, J. Graphical models in applied multivariate statistics. Wiley, 1990.
 \seealso{
 \code{\link[ggm]{icfmag}},  \code{\link[qpgraph]{qpIPF}}
 }
-
