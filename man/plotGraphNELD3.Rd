@@ -4,8 +4,15 @@
 \alias{plotGraphNELD3}
 \title{Dynamic plot of a graph}
 \usage{
-plotGraphNELD3(graph, type = "cor", S1 = NULL, S2 = NULL,
-  colLim = c(-1, 1), legendColor = TRUE, colNode = "#c0c0c0")
+plotGraphNELD3(
+  graph,
+  type = "cor",
+  S1 = NULL,
+  S2 = NULL,
+  colLim = c(-1, 1),
+  legendColor = TRUE,
+  colNode = "#c0c0c0"
+)
 }
 \arguments{
 \item{graph}{A graphNEL object.}

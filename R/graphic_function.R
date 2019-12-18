@@ -262,7 +262,8 @@ plotRect<-function(coord,col,a,n,border="white",density=NULL){
 # @return TRUE or FALSE
 checkMatrix<-function(M,name){
 
-  if( !(class(M)=="matrix") ) stop(paste0(name," must be class matrix"))
+  #if( !(class(M)=="matrix") ) stop(paste0(name," must be class matrix"))
+  if( !( sum(class(M)=="matrix")>0  ) ) stop(paste0(name," must be class matrix"))
   if(!(ncol(M)==nrow(M)) ) stop(paste0("the matrix ",name," are not square"))
   if(!all(rownames(M)==colnames(M)) ) stop(paste0(name,": column and row elements must be equal"))
 

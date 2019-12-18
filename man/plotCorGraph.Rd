@@ -4,8 +4,16 @@
 \alias{plotCorGraph}
 \title{Plot correlation or partial correlation matrix}
 \usage{
-plotCorGraph(S1, type = "cor", S2 = NULL, graph = NULL,
-  path = NULL, main = "", colLim = c(-1, 1), legendColor = TRUE)
+plotCorGraph(
+  S1,
+  type = "cor",
+  S2 = NULL,
+  graph = NULL,
+  path = NULL,
+  main = "",
+  colLim = c(-1, 1),
+  legendColor = TRUE
+)
 }
 \arguments{
 \item{S1, S2}{Sample covariance matrix. If \code{S2} supplied, the difference between the two corresponding correlation or partial correlation matrices is plotted.}
