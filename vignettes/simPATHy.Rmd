@@ -30,7 +30,7 @@ table(colnames(chimera))
 
 The column names indicate the condition (1 or 2) of each sample. 
 
-In this example, we restrict our attention to a subset of genes in this dataset, corresponding to genes participating in the KEGG’s [``Acute Myeloid Leukemia''](http://www.genome.jp/kegg-bin/show_pathway?hsa05221) pathway. 
+In this example, we restrict our attention to a subset of genes in this dataset, corresponding to genes participating in the KEGG’s [``Acute Myeloid Leukemia''](https://www.genome.jp/kegg-bin/show_pathway?hsa05221/) pathway. 
 
 The graph that we consider in what follows is a directed acyclic graph derived manually from this pathway.
 ```{r}
@@ -248,13 +248,13 @@ $$H_0 : \Sigma_1 = \Sigma_2 \mbox{   vs   } H_1 : \Sigma_1 \neq \Sigma_2 $$
 
 The `pathway.var.test` function implemented in the [**topologyGSA**](https://CRAN.R-project.org/package=topologyGSA) R package tests the equality of the concentration matrices of the two Gaussian graphical models, or in other words, the equality of the strength of the relations among genes on the pathway. The inputs are two experimental conditions, the graph and the significance level $\alpha$.
 
-```{r}
-library(topologyGSA)
+```{r, echo = T, results = 'hide'}
+#library(topologyGSA)
 #?pathway.var.test
 y1<-Result$dataset[rownames(Result$dataset)=="cl1",]
 y2<-Result$dataset[rownames(Result$dataset)=="cl2",]
 alpha<-0.05
-pathway.var.test(y1, y2, dag = graph, alpha)
+#pathway.var.test(y1, y2, dag = graph, alpha)
 ```
 
 [**clipper**](http://bioconductor.org/packages/clipper/), the approach implemented in [@clipper], goes a step further and identifies the paths within a pathway that differ the most between the two experimental conditions.

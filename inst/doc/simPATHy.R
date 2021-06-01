@@ -100,13 +100,13 @@ graph = graph, path = Result$path,colLim = c(-0.4,0.4))
 ## ---- eval=FALSE--------------------------------------------------------------
 #  easyLookShiny(Result, graph)
 
-## -----------------------------------------------------------------------------
-library(topologyGSA)
+## ---- echo = T, results = 'hide'----------------------------------------------
+#library(topologyGSA)
 #?pathway.var.test
 y1<-Result$dataset[rownames(Result$dataset)=="cl1",]
 y2<-Result$dataset[rownames(Result$dataset)=="cl2",]
 alpha<-0.05
-pathway.var.test(y1, y2, dag = graph, alpha)
+#pathway.var.test(y1, y2, dag = graph, alpha)
 
 ## -----------------------------------------------------------------------------
 library(clipper)
