@@ -271,7 +271,6 @@ SMLEdecomposable<-function(S,graph){
 #'   # Visualization
 #'   plotCorGraph(S1=Result$S1,S2 = Result$S2,graph = graph,path = path,colLim = c(-0.3,0.3))
 #'   plotGraphNELD3(S1=Result$S1,S2 = Result$S2,graph = graph,colLim = c(-0.3,0.3))
-#'   rm(list=ls())
 #'
 #'
 #'   ## Undirected graph

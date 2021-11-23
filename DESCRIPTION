@@ -1,8 +1,8 @@
 Package: simPATHy
 Type: Package
 Title: A Method for Simulating Data from Perturbed Biological Pathways
-Version: 0.5
-Date: 2021-06-01
+Version: 0.6
+Date: 2021-11-23
 Authors@R: c(person("Elisa", "Salviato", email = "elisa.salviato.88@gmail.com", role = c("aut", "cre")),
   person("Vera", "Djordjilovic", email = "djordjilovic@stat.unipd.it", role = "aut"),
   person("Chiara","Romualdi",email="chiara.romualdi@unipd.it",role="aut"),
@@ -14,15 +14,15 @@ Imports: mvtnorm, gRbase, graph, igraph, ggm, qpgraph, R.utils,
 License: AGPL-3
 LazyData: TRUE
 RoxygenNote: 7.1.1
-Suggests: knitr, rmarkdown, clipper
+Suggests: knitr, rmarkdown, clipper, topologyGSA
 VignetteBuilder: knitr
 Encoding: UTF-8
 NeedsCompilation: no
-Packaged: 2021-06-01 09:21:23 UTC; esalviat
+Packaged: 2021-11-23 09:21:42 UTC; esalviat
 Author: Elisa Salviato [aut, cre],
   Vera Djordjilovic [aut],
   Chiara Romualdi [aut],
   Monica Chiogna [aut]
 Maintainer: Elisa Salviato <elisa.salviato.88@gmail.com>
 Repository: CRAN
-Date/Publication: 2021-06-01 10:40:02 UTC
+Date/Publication: 2021-11-23 09:50:02 UTC

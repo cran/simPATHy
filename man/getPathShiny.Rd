@@ -10,7 +10,7 @@ getPathShiny(graph)
 \item{graph}{A graphNEL object.}
 }
 \value{
-Selected path with the rigth format for simPATHy function.
+Selected path with the right format for simPATHy function.
 }
 \description{
 Choose a path in a graph from an interactive shiny app with the rigth format for simPATHy function.

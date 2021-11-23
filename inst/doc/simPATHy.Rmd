@@ -75,7 +75,6 @@ When the number of nodes is high and relations between them week, a user can  im
 
 ```{r, fig.height=5, fig.width=7,  fig.align='center'}
 lim<-round(max(abs(simPATHy:::riscala(S))[upper.tri(S)]),2)
-#plotGraphNELD3(graph,type = "cor",S1 = S,colLim = c(-lim,lim))
 plotCorGraph(S1 = S,type ="cor",colLim = c(-lim,lim))
 ```
 
@@ -213,7 +212,6 @@ knitr::kable(easyLookDys(Result))
 To visualize differences in two conditions, **simPATHy** provides above mentioned plotting functions, i.e. `plotGraphNELD3` and `plotCorGraph`. In this case, both functions take, in addition to the graph, two covariance matrices corresponding to two conditions and  plot  the difference between them (uncomment to launch).
 
 ```{r, fig.height=5, fig.width=7,  fig.align='center'}
-#plotGraphNELD3(graph,type = "cor",S1 = Result$S1, S2 = Result$S2, colLim = c(-0.4,0.4))
 plotCorGraph(S1 = Result$S1, S2 = Result$S2, type = "cor",
 graph = graph, path = Result$path,colLim = c(-0.4,0.4))
 ```
@@ -248,18 +246,18 @@ $$H_0 : \Sigma_1 = \Sigma_2 \mbox{   vs   } H_1 : \Sigma_1 \neq \Sigma_2 $$
 
 The `pathway.var.test` function implemented in the [**topologyGSA**](https://CRAN.R-project.org/package=topologyGSA) R package tests the equality of the concentration matrices of the two Gaussian graphical models, or in other words, the equality of the strength of the relations among genes on the pathway. The inputs are two experimental conditions, the graph and the significance level $\alpha$.
 
-```{r, echo = T, results = 'hide'}
-#library(topologyGSA)
+```{r echo=TRUE, message=FALSE, warning=FALSE, eval=FALSE}
+library(topologyGSA)
 #?pathway.var.test
 y1<-Result$dataset[rownames(Result$dataset)=="cl1",]
 y2<-Result$dataset[rownames(Result$dataset)=="cl2",]
 alpha<-0.05
-#pathway.var.test(y1, y2, dag = graph, alpha)
+pathway.var.test(y1, y2, dag = graph, alpha)
 ```
 
 [**clipper**](http://bioconductor.org/packages/clipper/), the approach implemented in [@clipper], goes a step further and identifies the paths within a pathway that differ the most between the two experimental conditions.
 
-```{r}
+```{r echo=TRUE, message=FALSE, warning=FALSE, eval=FALSE}
 library(clipper)
 #?clipper
 expr<-t(Result$dataset)

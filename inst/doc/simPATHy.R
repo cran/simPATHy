@@ -34,7 +34,6 @@ plotCorGraph(S1 = S,type = "cor")
 
 ## ---- fig.height=5, fig.width=7,  fig.align='center'--------------------------
 lim<-round(max(abs(simPATHy:::riscala(S))[upper.tri(S)]),2)
-#plotGraphNELD3(graph,type = "cor",S1 = S,colLim = c(-lim,lim))
 plotCorGraph(S1 = S,type ="cor",colLim = c(-lim,lim))
 
 ## ---- fig.height=5, fig.width=7,  fig.align='center'--------------------------
@@ -93,26 +92,25 @@ Result$correction
 knitr::kable(easyLookDys(Result))
 
 ## ---- fig.height=5, fig.width=7,  fig.align='center'--------------------------
-#plotGraphNELD3(graph,type = "cor",S1 = Result$S1, S2 = Result$S2, colLim = c(-0.4,0.4))
 plotCorGraph(S1 = Result$S1, S2 = Result$S2, type = "cor",
 graph = graph, path = Result$path,colLim = c(-0.4,0.4))
 
 ## ---- eval=FALSE--------------------------------------------------------------
 #  easyLookShiny(Result, graph)
 
-## ---- echo = T, results = 'hide'----------------------------------------------
-#library(topologyGSA)
-#?pathway.var.test
-y1<-Result$dataset[rownames(Result$dataset)=="cl1",]
-y2<-Result$dataset[rownames(Result$dataset)=="cl2",]
-alpha<-0.05
-#pathway.var.test(y1, y2, dag = graph, alpha)
+## ----echo=TRUE, message=FALSE, warning=FALSE, eval=FALSE----------------------
+#  library(topologyGSA)
+#  #?pathway.var.test
+#  y1<-Result$dataset[rownames(Result$dataset)=="cl1",]
+#  y2<-Result$dataset[rownames(Result$dataset)=="cl2",]
+#  alpha<-0.05
+#  pathway.var.test(y1, y2, dag = graph, alpha)
 
-## -----------------------------------------------------------------------------
-library(clipper)
-#?clipper
-expr<-t(Result$dataset)
-classes<-as.numeric(gsub("cl","",colnames(expr)))
-clipped<-clipper(expr,classes,graph)
-clipped
+## ----echo=TRUE, message=FALSE, warning=FALSE, eval=FALSE----------------------
+#  library(clipper)
+#  #?clipper
+#  expr<-t(Result$dataset)
+#  classes<-as.numeric(gsub("cl","",colnames(expr)))
+#  clipped<-clipper(expr,classes,graph)
+#  clipped
 

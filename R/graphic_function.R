@@ -81,6 +81,11 @@ giveColors<-function(val,lim,digits=4,outCol="#c0c0c0"){
 #' @export
 plotCorGraph<-function(S1,type="cor",S2=NULL,graph=NULL,path=NULL,main="",colLim=c(-1,1),legendColor=TRUE){
 
+  # record user's options
+  user.par<-graphics::par(no.readonly = TRUE)
+  # restore user's options before exiting the function
+  on.exit(graphics::par(user.par))
+
   a<-0.5
   digits<-4
 
@@ -274,7 +279,7 @@ checkMatrix<-function(M,name){
 #'
 #' Choose a path in a graph from an interactive shiny app with the rigth format for simPATHy function.
 #' @param graph A graphNEL object.
-#' @return Selected path with the rigth format for simPATHy function.
+#' @return Selected path with the right format for simPATHy function.
 #' @seealso \code{\link[simPATHy]{simPATHy}}
 #' @examples
 #'  if(require(gRbase)){

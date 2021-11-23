@@ -84,13 +84,11 @@ graphNELD3 <- function(graph,S=NULL,colNode = "#c0c0c0",limColEdges=NULL,edgeCli
 #'   is useful if you want to save an expression in a variable.
 #'
 #' @name graphNELD3-shiny
-#' @export
 graphNELD3Output <- function(outputId, width = '100%', height = '400px'){
   htmlwidgets::shinyWidgetOutput(outputId, 'graphNELD3', width, height, package = 'simPATHy')
 }
 
 #' @rdname graphNELD3-shiny
-#' @export
 renderGraphNELD3 <- function(expr, env = parent.frame(), quoted = FALSE) {
   if (!quoted) { expr <- substitute(expr) } # force quoted
   htmlwidgets::shinyRenderWidget(expr, graphNELD3Output, env, quoted = TRUE)
